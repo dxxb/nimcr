@@ -46,7 +46,7 @@ if not exeName.fileExists or filename.fileNewer exeName:
   exeName.removeFile
   command = "nim " & nimArgs & " --colors:on --nimcache:" &
     getTempDir()/("nimcache-" & filename.hash.toHex) &
-    " --out:\"" & exeName & "\" " & filename
+    " --out:\"" & exeName & "\" \"" & filename & "\""
 
   (output, buildStatus) = execCmdEx(command)
   # Windows file hiding (hopefully, not tested)
